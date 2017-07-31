@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 var $    = require('gulp-load-plugins')();
+var concat = require('gulp-concat');
 
 var sassPaths = [
   'bower_components/normalize.scss/sass',
@@ -20,6 +21,25 @@ gulp.task('sass', function() {
     .pipe(gulp.dest('css'));
 });
 
-gulp.task('default', ['sass'], function() {
-  gulp.watch(['scss/**/*.scss'], ['sass']);
+gulp.task('scripts', function() {
+  return gulp.src('js/*.js')
+    .pipe(concat('main.js'))
+    .pipe(gulp.dest('bower_components/foundation-sites/dist/js'));
+});
+
+
+
+
+
+// gulp.task('default', ['scripts'], ['sass'], function() {
+//   gulp.watch(['scss/**/*.scss'], ['sass']);
+// });
+gulp.task('default',  function() {
+  // Log file changes to console
+
+  // Sass Watch
+   gulp.watch(['scss/**/*.scss'], ['sass']);
+
+  // JS Watch
+  gulp.watch(['js/**/*.js'], ['scripts']);
 });

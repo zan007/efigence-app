@@ -1,0 +1,92 @@
+.login-board{
+	padding: 1.5em;
+	border-radius: 4px;
+	form{
+		border: 1px solid rgba(255,255,255,.2);
+		margin: 9em 1.5em 6em 1.5em;
+		padding: 7em .5em 3em .5em;
+		@media screen and (min-width: 930px){
+			padding: 5.5em .5em 3em .5em;
+		}
+	}
+	input{
+		display: inline-block;
+		width: 85%;
+		border: none;
+		outline: none;
+		max-height: 1.7em;
+		border-radius: 2px;
+		&:focus{
+			outline: none;
+			border: none;
+			box-shadow: inset 1px 1px 3px $shadowColor;
+		}
+
+	}
+	.keyboard{
+		margin-left: .3em;
+		display: inline-block;
+		vertical-align: middle;
+		fill: #fff;
+		cursor: pointer;
+		transition: all .1s linear;
+		&:hover{
+			filter: drop-shadow(1px 1px 4px rgba(255,255,255,0.9));
+			transform: scale(1.05);
+		}
+	}
+	p:nth-child(5){
+		display: inline-block;
+		margin-right: 1em;
+	}
+	button{
+		display: inline-block;
+		width: 117px;
+		background: #fff;
+		height: 31px;
+		border-radius: 4px;
+		outline: none;
+		border: none;
+		cursor: pointer;
+		transition: all .1s linear;
+		&:hover{
+			outline:none;
+			box-shadow: inset 1px 1px 3px $shadowColor;
+		}
+		&:focus{
+			outline:none;
+			box-shadow: inset 1px 1px 3px $shadowColor;
+		}
+	}
+}
+
+.avatar{
+		margin: 0 auto;
+		width: 94px;
+		height: 94px;
+		border-radius:50%;
+		background: #fff;
+		margin-top: -140px;
+		margin-bottom: 2em;
+	}
+
+.num-place{
+	*{
+		display: inline-block;
+		font-weight: bold;
+	}
+	p:first-child{
+		margin-right: .5em;
+	}
+	img{
+		width:4%;
+		cursor: pointer;
+		outline: none;
+		border: none;
+		transition: all .1s linear;
+		&:hover{
+			filter: drop-shadow(1px 1px 4px rgba(255,255,255,0.9));
+			transform: rotateY(180deg);
+		}
+	}
+}

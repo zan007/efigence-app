@@ -53,6 +53,14 @@
 
 @include motion-ui-transitions;
 @include motion-ui-animations;
-@import 'variables';
-@import 'form';
-@import 'login';
+$fa-font-path:"../node_modules/font-awesome/fonts";
+@import "../node_modules/font-awesome/scss/font-awesome";
+.icon-user {
+  @extend .fa;
+  @extend .fa-user;
+  }
+@import 'partials/variables';
+@import 'partials/base';
+@import 'partials/form';
+@import 'partials/footer-nav';
+@import 'partials/login';

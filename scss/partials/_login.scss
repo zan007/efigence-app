@@ -1,0 +1,57 @@
+.log-container{
+	background: url(https://drive.google.com/uc?id=0ByQNVHoy3DFqa3hoSWM1Z21zNFE) no-repeat center center;
+	background-size: cover;
+	font-size: .8em;
+	min-height: 100vh;
+	align-items: center;
+	@media screen and(min-width: 930px){
+		font-size: 1em;
+	}
+	&:first-child{
+		padding-top: 7.3em;
+		@media screen and(min-width: 640px){
+			padding-top: 0;
+		}
+	}
+}
+.log-content{
+	text-align: center;
+	@media screen and(min-width:640px){
+		padding-top: 10vh;
+	}
+}
+
+
+.login-board{
+	background: $blue;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 500;
+	color: #fff;
+	text-align: center;
+	width:100%;
+	padding: 0;
+	margin: 0 auto;
+	text-align: center;
+	display: inline-block;
+	@media screen and(min-width: 640px){
+		max-width:600px;
+	}
+	h2{
+	font-family: 'Roboto', sans-serif;
+	font-weight: 300;
+	font-stretch: condensed;
+	text-shadow: -0.7px -0.7px 0 rgba(0,0,0, 0.11);
+	line-height: .9em;
+	margin-top:1em;
+	}
+}
+.logo{
+	display: inline-block;
+	border-radius: 4px;
+	width: 100px;
+	padding: 1.5em 1em;
+	border: 1px solid 	
+	rgba(255,255,255,.2);
+	float: right;
+}
+
