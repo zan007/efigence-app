@@ -72,6 +72,16 @@
     }
 }
 
+li{
+	i{
+		color:#fff;
+		transition: all .2s linear;
+		&:hover{
+			color: #3b5998;
+		}
+	}
+}
+
 // hamburger
 .hamburger{
 	cursor: pointer;
