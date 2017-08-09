@@ -2,18 +2,20 @@ $(document).foundation();
 
 $(document).ready(function(){
 
-	var paswordInput = document.querySelector('#passwordInput');
+	var passwordInput = document.querySelector('#passwordInput');
 	var loginBtn = document.querySelector('#loginBtn');
 
 	loginBtn.addEventListener('click', function(e){
-
-		if(paswordInput.value === "" || paswordInput.value === 'Did you forget your password?'){
-			paswordInput.classList.add('error');
+	e.preventDefault();
+		if(passwordInput.value === "" || passwordInput.value === 'Did you forget your password?'){
+			passwordInput.classList.add('error');
 			passwordInput.setAttribute("type","text")
-			paswordInput.value = 'Did you forget your password?';
-			e.preventDefault();
+			passwordInput.value = 'Did you forget your password?';
+			
 		}else{
 			console.log(passwordInput.value);
+		 	window.location.replace("index.html");
+  			return false;
 		}
 	});
 
@@ -24,3 +26,4 @@ $(document).ready(function(){
 		passwordInput.classList.remove('error');
 	});
 });
+
