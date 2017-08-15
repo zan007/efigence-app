@@ -14,7 +14,7 @@
 		width: 85%;
 		border: none;
 		outline: none;
-		max-height: 1.7em;
+		max-height: 1.9em;
 		border-radius: 2px;
 		&:focus{
 			outline: none;
@@ -79,15 +79,38 @@
 		margin-right: .5em;
 	}
 	img{
-		width:4%;
+		width:50%;
 		cursor: pointer;
 		outline: none;
 		border: none;
 		transition: all .1s linear;
+		@media screen and (min-width: 640px){
+		width:4%;	
+		}
 		&:hover{
 			filter: drop-shadow(1px 1px 4px rgba(255,255,255,0.9));
 			transform: rotateY(180deg);
 		}
+	}
+}
+
+
+
+.login-board .login-inp{
+	display: inline-block;
+}
+
+.error-msg{
+	position: absolute;
+	border: 1px solid red;
+	padding: 2em;
+	border-radius: 4px;
+	:after{
+		content: "";
+		display: block;
+		border-style: solid;
+		border-width: 0 25px 37px 25px;
+		border-color: transparent transparent red transparent;
 	}
 }
 
