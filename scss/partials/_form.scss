@@ -47,7 +47,7 @@ label{
 			transform: scale(1.05);
 		}
 	}
-	p:nth-child(5){
+	p:nth-child(5){ //nie da się tego zastąpić klasą?
 		display: inline-block;
 		margin-right: 1em;
 	}
@@ -83,10 +83,10 @@ label{
 	}
 
 .num-place{
-	*{
+	*{ //maxymalnie nieefektywny selektor
 		display: inline-block;
 	}
-	p:first-child{
+	p:first-child{ //proponuje użyć klasy
 		margin-right: .5em;
 		font-weight: bold;
 	}
