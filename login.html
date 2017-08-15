@@ -24,16 +24,17 @@
             <form>
               <div class="avatar"></div>
               <div class="num-place"><p id="login-sample">1233456789</p>
-               <label>   
-                <input type="text" id="login-name" class="login-inp hide"> 
-                <div class="error-msg"></div>
-              </label>
-              <div id="changed-log" class="close-ic"><img src="img/close.svg" alt="close icon"></div></div>
+                <label class="hide login-box">   
+                  <input type="text" id="login-name" > 
+                <div class="error-msg hide" id="loginError"></div>
+                </label>
+              <div id="changed-log" class="close-ic"><img src="img/close.svg" alt="close icon"></div>
+              </div>
               <label>
                 <input type="password" name="text" id="passwordInput" required>
-                <div class="error-msg"></div>
+                <div class="error-msg hide" id="passwordError"></div>
               </label>
-              <div class="keyboard hide-for-small-only"><img src="img/keyboard.svg" alt="keyboard icon"></div>
+              <div class="keyboard"><img src="img/keyboard.svg" alt="keyboard icon"></div>
               <p>SELECT OTHER</p>
               <button type="submit" id="loginBtn">GO</button>
               </form>

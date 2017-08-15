@@ -20,26 +20,41 @@ $(document).ready(function(){
 	const loginInput = document.querySelector('#login-name');
 	const nameBtn = document.querySelector('#changed-log');
 	const sampleLog = document.querySelector('#login-sample');
-	const errMsg = document.querySelector('.error-msg')
+	const errMsg = document.querySelector('.error-msg');
+	const loginBox = document.querySelector(".login-box");
+	const passwordError = document.querySelector("#passwordError");
+	const loginError = document.querySelector("#loginError");
 
 	nameBtn.addEventListener('click', function(){
-		loginInput.classList.toggle('hide')
-		sampleLog.classList.toggle('hide')
+		loginBox.classList.toggle('hide')
+		sampleLog.classList.toggle('hide');;
 	})
-
 
 	loginBtn.addEventListener('click', function(e){
 	e.preventDefault();
-		if(passwordInput.value === "" || passwordInput.value === 'Did you forget your password?'){
+		if(passwordInput.value === ""){
 			passwordInput.classList.add('error');
-			passwordInput.setAttribute("type","text")
-			passwordInput.value = 'Did you forget your password?';
-			yourLogin = "Your Login!";
-	    	loginInput.classList.add('error');
+			passwordError.classList.remove('hide');
+			passwordError.textContent = "write password";
 			
 		}else{
-			let yourLogin = loginInput.value;
-			let yourPassword = passwordInput.value;
+			var yourPassword = passwordInput.value;
+		}
+
+		if(!loginBox.classList.contains('hide')){
+			if(loginInput.value === ""){
+				loginInput.classList.add('error');
+				loginError.classList.remove('hide');
+				loginError.textContent = "write login"
+			}else {
+				var yourLogin = loginInput.value;
+			}
+		}else {
+			return
+		}
+
+		if(!yourPassword == "" && !yourLogin == ""){
+
 	  		$.ajax({
 	  			type: "post",
 	  			data: {
@@ -48,28 +63,32 @@ $(document).ready(function(){
 	  			},
 	  			url: "https://efigence-camp.herokuapp.com/api/login",
 	  			error: function(response) {
-	  				 console.log(response.responseText);
-						errMsg.textContent = response.responseText
-	    			passwordInput.value = 'Did you forget your password?';
-	    			yourLogin = "Your Login!";
-	    			loginInput.classList.add('error');		
+	  				console.log(response.responseText);
+					let errMsg = JSON.parse(response.responseText);
+					console.log(errMsg.message);
+					passwordError.classList.remove('hide');
+					passwordError.textContent = errMsg.message;
+					loginError.classList.remove('hide');
+					loginError.textContent = errMsg.message;
+			
 	 			 },
 	  			success: function(response) {
 	    			console.log(response);
 	  			}
 			});	
+		}else {
+			console.log('error');
 		}
 	});
 
 	passwordInput.addEventListener('focus', function(){
-
-		passwordInput.value = "";
-		passwordInput.setAttribute("type","password");
+		passwordError.classList.add('hide');
+		passwordError.textContent = "";
 		passwordInput.classList.remove('error');
 	});
 	loginInput.addEventListener('focus', function(){
-
-		loginInput.value = "";
+		loginError.classList.add('hide');
+		loginError.textContent = "";
 		loginInput.classList.remove('error');
 	});
 });

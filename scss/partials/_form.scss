@@ -1,17 +1,26 @@
+label{
+	display: inline-block;
+	width:85%;
+	position: relative;
+
+}
+
 .login-board{
-	padding: 1.5em;
+	padding: .5em;
 	border-radius: 4px;
+	@media screen and (min-width: 640px){
+	padding: 1.5em;	
+	}
 	form{
 		border: 1px solid rgba(255,255,255,.2);
-		margin: 9em 1.5em 6em 1.5em;
-		padding: 7em .5em 3em .5em;
+		margin: 9em .2em 4em .2em;
+		padding: 7em .5em 1.5em .5em;
 		@media screen and (min-width: 930px){
 			padding: 5.5em .5em 3em .5em;
+			margin: 9em 1.5em 3em 1.5em;
 		}
 	}
 	input{
-		display: inline-block;
-		width: 85%;
 		border: none;
 		outline: none;
 		max-height: 1.9em;
@@ -24,12 +33,15 @@
 
 	}
 	.keyboard{
-		margin-left: .3em;
+		margin-left: .1em;
 		display: inline-block;
 		vertical-align: middle;
 		fill: #fff;
 		cursor: pointer;
 		transition: all .1s linear;
+		@media screen and (min-width: 640px){
+			margin-left: .3em;	
+		}
 		&:hover{
 			filter: drop-shadow(1px 1px 4px rgba(255,255,255,0.9));
 			transform: scale(1.05);
@@ -73,10 +85,10 @@
 .num-place{
 	*{
 		display: inline-block;
-		font-weight: bold;
 	}
 	p:first-child{
 		margin-right: .5em;
+		font-weight: bold;
 	}
 	img{
 		width:50%;
@@ -84,9 +96,6 @@
 		outline: none;
 		border: none;
 		transition: all .1s linear;
-		@media screen and (min-width: 640px){
-		width:4%;	
-		}
 		&:hover{
 			filter: drop-shadow(1px 1px 4px rgba(255,255,255,0.9));
 			transform: rotateY(180deg);
@@ -94,27 +103,28 @@
 	}
 }
 
-
-
-.login-board .login-inp{
-	display: inline-block;
-}
-
 .error-msg{
 	position: absolute;
-	border: 1px solid red;
-	padding: 2em;
+	border: 1px solid $error-color;
+	padding: .5em;
 	border-radius: 4px;
-	:after{
+	background: $error-bg-color;
+	z-index: 100;
+	left: 0%;
+	opacity: .9;
+	&:after{
 		content: "";
 		display: block;
+		position: absolute;
+		top: 0%;
+		left: 0%;
+		transform: translateY(-100%);
 		border-style: solid;
-		border-width: 0 25px 37px 25px;
-		border-color: transparent transparent red transparent;
+		border-width: 0 10px 17px 10px;
+		border-color: transparent transparent $error-color transparent;
 	}
 }
 
 .error{
-	color: $error-color;
 	box-shadow: inset 0px 0px 1px 1px $error-color;
 }
