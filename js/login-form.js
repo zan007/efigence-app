@@ -12,27 +12,27 @@ $(document).ready(function(){
 	const passwordError = document.querySelector("#passwordError");
 	const loginError = document.querySelector("#loginError");
 
-	nameBtn.addEventListener('click', function(){
-		loginBox.classList.toggle('hide')
-		sampleLog.classList.toggle('hide');;
+	nameBtn.addEventListener('click', function(){ // spacja przed nawiasem { zmień też w pozostałych miejscach
+		loginBox.classList.toggle('hide');
+		sampleLog.classList.toggle('hide');
 	})
 
 	loginBtn.addEventListener('click', function(e){
 	e.preventDefault();
-		if(passwordInput.value === ""){
+		if(passwordInput.value === ""){ // ' zamiast "
 			passwordInput.classList.add('error');
 			passwordError.classList.remove('hide');
-			passwordError.textContent = "write password";
+			passwordError.textContent = "write password"; // ' zamiast "
 			
 		}else{
 			var yourPassword = passwordInput.value;
 		}
 
 		if(!loginBox.classList.contains('hide')){
-			if(loginInput.value === ""){
+			if(loginInput.value === ""){ //jak wyżej
 				loginInput.classList.add('error');
 				loginError.classList.remove('hide');
-				loginError.textContent = "write login"
+				loginError.textContent = "write login" //i tu tez
 			}else {
 				var yourLogin = loginInput.value;
 			}
@@ -40,7 +40,7 @@ $(document).ready(function(){
 			return
 		}
 
-		if(!yourPassword == "" && !yourLogin == ""){
+		if(!yourPassword == "" && !yourLogin == ""){ // dlaczego nie użyłeś standardowego zapisu yourPassword !== ''?
 
 	  		$.ajax({
 	  			type: "post",
